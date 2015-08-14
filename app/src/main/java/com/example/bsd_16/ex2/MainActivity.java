@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         et = (EditText) findViewById(R.id.editText);
         tw = (TextView) findViewById(R.id.textView2);
         int et_val = Integer.valueOf(et.getText().toString()); // Get value of et
-        et.setText(null); // Empty the input text field
         String output = "";
 
         if (et_val > MAX_NUM) {
