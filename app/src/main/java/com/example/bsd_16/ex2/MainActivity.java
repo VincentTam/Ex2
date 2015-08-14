@@ -47,8 +47,14 @@ public class MainActivity extends AppCompatActivity {
         // Get the elements from the layout
         et = (EditText) findViewById(R.id.editText);
         tw = (TextView) findViewById(R.id.textView2);
-        int et_val = Integer.valueOf(et.getText().toString()); // Get value of et
-        String output = "";
+        int et_val = 0; // Contain the value of et
+        String output= ""; // Contain the value of the output
+
+        try {
+            et_val = Integer.valueOf(et.getText().toString()); // Get value of et
+        } catch (NumberFormatException e) {
+            output += "Empty input!  Enter a number.";
+        }
 
         if (et_val > MAX_NUM) {
             output += "That's too much! This apps gives you 10 at most.";
