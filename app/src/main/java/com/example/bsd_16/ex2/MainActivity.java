@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    // Contains the elements of the layout
+    // Contain the elements of the layout
     EditText et;
     TextView tw;
     private static final int MAX_NUM = 10; // Maximum number of envelopes
