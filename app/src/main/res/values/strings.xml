@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Ex2</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="question">How many baguettes do you want?</string>
+    <string name="btn_txt">Get them</string>
+    <string name="hint">A number between 0 and 5</string>
 </resources>

@@ -1,18 +1,22 @@
 package com.example.bsd_16.ex2;
 
+import android.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     // Contain the elements of the layout
-    EditText et;
-    TextView tw;
-    private static final int MAX_NUM = 10; // Maximum number of envelopes
+    private EditText et;
+    private TextView tw;
+    private LinearLayout linearLayout, innerLinearLayout; // Container for the pictures
+    private static final int MAX_NUM = 5; // Maximum number of envelopes
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +63,41 @@ public class MainActivity extends AppCompatActivity {
         if (et_val > MAX_NUM) {
             output += "That's too much! This apps gives you 10 at most.";
         } else {
+            linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
+            innerLinearLayout = new LinearLayout(this);
+            innerLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            // ImageView Setup
+            ImageView[] imageViews = new ImageView[et_val];
+
             for (int i = 0; i < et_val; i++) {
-                // U+2079 is the unicode character for envelope
-                output += "\u2709";
+                imageViews[i] = new ImageView(this);
+                // Setting image resource
+                imageViews[i].setImageResource(R.drawable.baguette_small);
+                // Setting image position
+                imageViews[i].setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT));
+
+                // Adding view to layout
+                innerLinearLayout.addView(imageViews[i]);
             }
+
+            //innerLinearLayout = new LinearLayout(this);
+            //innerLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
+            //// http://stackoverflow.com/a/25077643/4285386
+            //LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+            //        LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            //ImageView mytv = new ImageView(this);
+            //mytv.setImageResource(R.drawable.baguette_small);
+            //mytv.setLayoutParams(params);
+            //innerLinearLayout.addView(mytv);
+            //ImageView mytv1 = new ImageView(this);
+            //mytv1.setLayoutParams(params);
+            //mytv1.setImageResource(R.drawable.baguette_small);
+            //innerLinearLayout.addView(mytv1);
+            linearLayout.addView(innerLinearLayout);
         }
 
         // Pass the value of 'output' to the text view
