@@ -64,6 +64,12 @@ public class MainActivity extends AppCompatActivity {
             output += "That's too much! This apps gives you 10 at most.";
         } else {
             linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
+            // Remove all existing images
+            if(linearLayout.getChildCount() > 0) {
+                linearLayout.removeAllViews();
+            }
+
+            // Create a new LinearLayout for convenience
             innerLinearLayout = new LinearLayout(this);
             innerLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
