@@ -1,6 +1,5 @@
 package com.example.bsd_16.ex2;
 
-import android.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -82,9 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 // Setting image resource
                 imageViews[i].setImageResource(R.drawable.macaron_small);
                 // Setting image position
-                imageViews[i].setLayoutParams(new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT));
+                imageViews[i].setLayoutParams(params);
 
                 // Adding view to layout
                 innerLinearLayout.addView(imageViews[i]);
