@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             for (int i = 0; i < et_val; i++) {
                 imageViews[i] = new ImageView(this);
                 // Setting image resource
-                imageViews[i].setImageResource(R.drawable.baguette_small);
+                imageViews[i].setImageResource(R.drawable.macaron_small);
                 // Setting image position
                 imageViews[i].setLayoutParams(new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
@@ -84,19 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 innerLinearLayout.addView(imageViews[i]);
             }
 
-            //innerLinearLayout = new LinearLayout(this);
-            //innerLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
-            //// http://stackoverflow.com/a/25077643/4285386
-            //LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-            //        LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            //ImageView mytv = new ImageView(this);
-            //mytv.setImageResource(R.drawable.baguette_small);
-            //mytv.setLayoutParams(params);
-            //innerLinearLayout.addView(mytv);
-            //ImageView mytv1 = new ImageView(this);
-            //mytv1.setLayoutParams(params);
-            //mytv1.setImageResource(R.drawable.baguette_small);
-            //innerLinearLayout.addView(mytv1);
             linearLayout.addView(innerLinearLayout);
         }
 
